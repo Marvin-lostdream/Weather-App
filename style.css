@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+  font-family: "Noto Sans Arabic", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ddd;
+}
+
+.settings {
+  position: fixed;
+  z-index: 999;
+}
+
+.settings ul {
+  list-style: none;
+  padding: 0;
+}
+
+.settings ul li {
+  margin-bottom: 10px;
+  position: relative;
+  left: -90px;
+  transition: left 0.3s;
+}
+
+.settings ul li:hover {
+  left: -5px;
+}
+
+.settings ul li button {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  width: 120px;
+  background-color: #ffab8a;
+  border: 2px solid black;
+  border-radius: 0 20px 20px 0;
+  padding: 5px;
+}
+
+.settings ul li button:active {
+  background-color: #ffa17c;
+}
+
+/* ==================== Normal Mode ==================== */
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  background-image: linear-gradient(145deg, #fc8353, #ffab8a);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.527);
+}
+
+.container h2 {
+  color: #222;
+  font-size: 30px;
+  text-shadow: 2px 2px 0 #2222225d;
+}
+
+.container .search {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .search .cityInput {
+  flex: 1;
+  border-radius: 20px;
+  border: 3px solid #f65c20;
+  outline: none;
+  padding: 10px 20px 10px 85px;
+  caret-color: #fc8353;
+  transition: box-shadow 0.3s;
+}
+
+.container .search .cityInput:focus {
+  box-shadow: 0 4px 6px #f65d208c;
+}
+
+.container .search .searchBtn {
+  position: absolute;
+  border: 2px solid #f65c20;
+  border-radius: 16px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+  background: linear-gradient(135deg, #ff9064, #f65c20);
+  background-size: 200% 200%;
+  color: #fff;
+  cursor: pointer;
+  transition: background-position 0.3s;
+}
+
+.search .searchBtn:active {
+  background-position: 100% 50%;
+}
+
+.container .result {
+  width: 100%;
+  max-width: 750px;
+  margin-top: 50px;
+  padding: 50px;
+  background-image: linear-gradient(
+    135deg,
+    rgb(67, 53, 255) 30%,
+    rgb(141, 141, 255) 50%
+  );
+  background-position: 0 50%;
+  background-size: 200% 200%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(102, 67, 255);
+  text-align: center;
+  animation: move 5s infinite alternate;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+}
+
+.result img {
+  width: 200px;
+  max-width: 100%;
+  border: 5px solid #dadada;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.582);
+  border-radius: 50%;
+}
+
+.result .welcome p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 auto 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.411);
+}
+
+.result .welcome h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.411);
+}
+
+.result .welcome .weather-icon-lg {
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+
+.result h1 {
+  text-shadow: 2px 2px 5px #222;
+  color: #fff;
+  margin: 0;
+}
+
+.result .description {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0;
+  text-shadow: 2px 2px 5px #141414ad;
+}
+
+.result .cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.result .cards .card {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.result .cards .card .label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0;
+}
+
+.result .cards .card .value {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #222;
+}
+
+.result .cards .card:hover {
+  background-color: #e2e2e2;
+  transform: translateY(-2px);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.411);
+}
+
+@media (max-width: 792px) {
+  .container .result {
+    padding: 5px;
+  }
+}
+
+/* ==================== Dark Mode ==================== */
+
+body.darkMode {
+  background-color: #222;
+}
+
+body.darkMode .settings ul li button {
+  background-color: #1d1d1d;
+  color: #fff;
+}
+
+body.darkMode .container {
+  background-image: linear-gradient(145deg, #555555, #383838);
+}
+
+body.darkMode .container h2 {
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
+}
+
+body.darkMode .container .search .cityInput {
+  border-color: #242424;
+  caret-color: #222;
+}
+
+body.darkMode .container .search .cityInput:focus {
+  box-shadow: 0 4px 6px #242424;
+}
+
+body.darkMode .container .search .searchBtn {
+  background: #222;
+  border-color: #242424;
+}
+
+body.darkMode .container .search .searchBtn:active {
+  background-color: #1d1d1d;
+}
+
+body.darkMode .container .result {
+  background-image: linear-gradient(135deg, rgb(0, 2, 32), rgb(26, 26, 26));
+  box-shadow: 0 0 10px rgb(7, 0, 39);
+}
+
+body.darkMode .container .result {
+  color: #fff;
+  text-shadow: 2px 2px 5px rgb(32, 32, 32);
+}
+
+body.darkMode .container .result .welcome h3,
+body.darkMode .container .result .welcome p {
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(184, 184, 184, 0.281);
+}
+
+body.darkMode .container .result .card {
+  background: #1d1d1d;
+}
+
+body.darkMode .container .result .card:hover {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.411);
+}
+
+body.darkMode .container .result .label,
+body.darkMode .container .result .value {
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(51, 51, 51, 0.521);
+}

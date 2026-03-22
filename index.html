@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تطبيق الطقس</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="settings">
+      <ul>
+        <li class="darkModeToggle">
+          <button id="modeToggle">الوضع النهاري ☀️</button>
+        </li>
+        <li class="langToggle">
+          <button id="langToggle">اللغة الحالية : AR</button>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <h2>تطبيق حالة الطقس</h2>
+      <div class="search">
+        <input
+          dir="rtl"
+          type="text"
+          id="cityInput"
+          class="cityInput"
+          placeholder="اكتب اسم المدينة..."
+        />
+        <button id="searchBtn" class="searchBtn">بحث</button>
+      </div>
+      <div id="result" class="result">
+        <div class="welcome">
+          <div id="iconWeather" class="weather-icon-lg">🌤️</div>
+          <h3>مرحباً بك في تطبيق الطقس</h3>
+          <p>ابحث عن أي مدينة لمعرفة حالة الطقس</p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
