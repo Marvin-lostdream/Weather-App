@@ -293,7 +293,7 @@ function performSearch(city) {
   let searchCity = cityMap[city] || city;
 
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&units=metric&lang=${currentLang}&appid=5bfb70bb2440388c7363ee640356efaf`,
+    `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&units=metric&lang=${currentLang}&appid=3441d7798d201acf5444bd2b010d1d66`,
   )
     .then((res) => {
       if (!res.ok) {
@@ -356,7 +356,6 @@ function performSearch(city) {
       cards.appendChild(cloudsCard);
 
       result.append(cards);
-
     })
     .catch(() => {
       result.innerHTML =
